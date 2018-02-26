@@ -1,0 +1,8 @@
+  <ul class="nav">
+    <h6>Built Using:</h6>
+  {% for tool in page.tools %}
+        <li class="nav-item pl-4">
+            <i data-toggle="tooltip" data-placement="bottom" title="{{ tool.tool-name }}" class="tools-svg-icon  {{ tool.icon }}"></i>
+        </li>
+  {% endfor %}
+  </ul>

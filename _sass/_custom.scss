@@ -1,0 +1,304 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// See https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+
+// Colours
+//background Image: https://unsplash.com/search/san-francisco-night?photo=Ct3o98-toHY
+// Colors:
+// Light Grey(used in dropdown menu/contact form background): #f9f9f9
+// Medium Grey (used for hairlines around contact forms): #b7b7b7
+// Dark Grey (used for all copy on white and light grey backgrounds): #3b3d40
+// Dark Blue (used for all icons/CTA/ About Me Module): #1e3346
+// Orange (used for Cancel CTA): #be2400
+// White (used for contact form/copy on dark blue background): #FFFFFF
+
+// Font Families
+$font-family-a: 'Futura', Raleway, sans-serif;
+$font-family-b: 'Sanchez', serif;
+// Typography
+
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      $font-family-a;
+$font-family-monospace:       $font-family-b;
+$font-family-base:            $font-family-sans-serif;
+
+html {
+    min-height: 1000px;
+}
+
+body {
+  background: linear-gradient(0deg, #3b3d40, #1e3346);
+  p {
+    font-family: $font-family-monospace;
+  }
+
+}
+
+$card-border-color:  linear-gradient(30deg, #f9f9f9, #1e3346);
+
+$sizes: ();
+$sizes: map-merge((
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  85: 85%,
+  90: 90%,
+  100: 100%
+), $sizes);
+
+.mt-6 {
+  margin-top: 45px;
+}
+
+
+// Uncomment and customise as required
+$brand-primary:             #f9f9f9;
+$primary:       #1e3346;
+$secondary:     #3b3d40;
+//$success:       $green !default;
+$warning:       #be2400;
+// Options
+$enable-flex:               true;
+$enable-rounded:            false;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        true;
+
+
+
+// Mixin itself
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+
+/********
+// Navbar - header.html
+*********/
+/* Solid class attached on scroll past first section */
+
+
+
+.navbar.solid {
+  background-color: #1e3346;
+  // transition: background-color 1s ease 0s;
+  // box-shadow: 0 0 4px #1e3346;
+
+    .navbar-brand {
+      color: white;
+      // transition: color 1s ease 0s;
+
+    }
+
+
+    .navbar-nav {
+
+       > li {
+
+          > a {
+            color: #f9f9f9;
+            transition: color 1s ease 0s;
+          }
+
+       } //end li
+
+    } //end .navbar-nav
+
+}
+
+.nav-logo {
+  color: white;
+  // transition: color 1s ease 0s;
+  background-image: url('/images/svg/al-logo.svg');
+  background-repeat: no-repeat;
+  width: 55px; height: 55px;
+  display: block;
+
+  a {
+    width: 100%;
+    height: 49px;
+    display: block;
+  }
+
+}
+
+
+
+
+
+#cover {
+
+    /* Create the parallax scrolling effect */
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    #cover-caption {
+        width: 100%;
+    }
+
+}
+
+.parallax {
+    /* The image used */
+     background: #3b3d40 url('/images/bg.jpg');
+
+    /* Full height */
+    min-height: 940px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/********
+// INDEX - index.html
+*********/
+
+// ABOUT ME
+#about-me{
+  background-color: #1e3346;
+  color: white;
+}
+
+// TOP SOCIAL SVGS
+.top-nav-svg-icon{
+  font-size: 30px;
+  color: #b7b7b7;
+}
+
+// GITHUB AVATAR IMAGE
+img.github-avatar{
+  width: 30px;
+  height: 30px;
+}
+
+
+//
+.iphone-cover{
+  position: absolute;
+  width:100%;
+  height:10px;
+  // top: -100px;
+  // left: 0;
+  z-index: -1;
+}
+
+.iphone-cover::before{
+  content: url('/images/svg/mobile-phone.svg');
+  display:block;
+  position: absolute;
+  width: 100%;
+  top: -70px;
+  left: -15px;
+
+}
+
+/********
+// POST SINGLE PAGE  - page.html
+*********/
+
+#portImages{
+  // width: 320px;
+}
+
+
+
+/*********
+// FOOTER
+**********/
+
+.footer-svg-icon{
+  height: 20px;
+  width: 30px;
+  font-size: 30px;
+  color: #b7b7b7;
+}
+
+.contact-list, .footer-social{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  #portImages{
+    width: 96%;
+    top: 30px;
+    left: 10px;
+    }
+
+ }
+
+
+
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// RESPONSIVE Typography
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #portImages{
+    width: 96%;
+    top: 62px;
+    left: 10px;
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .iphone-cover::before{
+
+    top: -57px;
+
+
+  }
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

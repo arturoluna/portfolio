@@ -1,0 +1,45 @@
+---
+layout: default
+menuClass: navbar-dark
+
+---
+
+<div class="container mt-5 mb-5 pt-5">
+  <div class="row">
+    <div class="col-12 col-md-8 mb-5">
+      <article class="post h-entry text-light" itemscope itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+          <p class="post-meta">
+            <!-- <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+              {{ page.date | date: date_format }}
+            </time> -->
+            {% if page.author %}
+              • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+            {% endif %}</p>
+        </header>
+
+        <div class="post-content e-content pr-2" itemprop="articleBody">
+          {{ content }}
+        </div>
+        <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+        <!-- Cards -->
+              {% include tools.html %}
+        <!-- End Cards -->
+      </article>
+    </div>
+    <div class="offset-xs-4 col-md-4 mt-6">
+      <div class="container">
+          <div class="row">
+            {% if page.carousel-type == "mobile" %}
+                  {% include carousel-mobile.html %}
+                {% elsif page.carousel-type == "desktop" %}
+                  {% include carousel-desktop.html %}
+                {% endif %}
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>

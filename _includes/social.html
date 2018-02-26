@@ -1,0 +1,18 @@
+
+  {% if site.github_username%}
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
+      <i class="footer-svg-icon icon ion-social-github"></i>
+     <!-- <svg class="footer-svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> -->
+    <!-- <span class="align-middle username">{{ site.github_username| escape }}</span> -->
+    </a>
+  </li>{% endif %}
+  {% if site.linkedin_username%}
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">
+      <i class="footer-svg-icon icon ion-social-linkedin"></i>
+      <!-- <svg class="footer-svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> -->
+      <!-- <span class="align-middle username">{{ site.linkedin_username| escape }}</span> -->
+    </a>
+  </li>
+  {% endif %}
