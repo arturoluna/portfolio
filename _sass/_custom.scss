@@ -118,7 +118,7 @@ $enable-transitions:        true;
 .nav-logo {
   color: white;
   // transition: color 1s ease 0s;
-  background-image: url('/images/svg/al-logo.svg');
+  background-image: url('/assets/images/svg/al-logo.svg');
   background-repeat: no-repeat;
   width: 55px; height: 55px;
   display: block;
@@ -150,7 +150,7 @@ $enable-transitions:        true;
 
 .parallax {
     /* The image used */
-     background: #3b3d40 url('/images/bg.jpg');
+     background: #3b3d40 url('/assets/images/bg.jpg');
 
     /* Full height */
     min-height: 940px;
@@ -196,7 +196,7 @@ img.github-avatar{
 }
 
 .iphone-cover::before{
-  content: url('/images/svg/mobile-phone.svg');
+  content: url('/assets/images/svg/mobile-phone.svg');
   display:block;
   position: absolute;
   width: 100%;
