@@ -5,6 +5,8 @@
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ionicons.css">
+
   {% feed_meta %}
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}

@@ -4,7 +4,7 @@
   {% for post in site.posts %}
       <div class="col-md-4">
       <div class="card mb-3">
-          <img class="card-img-top" src="{{ site.baseurl }}{% if post.preview-img %}{{ post.preview-img | prepend: site.baseurl }}{% else %}{{ site.url}}/images/default.jpg{% endif %}" alt="">
+          <img class="card-img-top" src="{% if post.preview-img %}{{ post.preview-img | prepend: site.baseurl }}{% else %}{{ site.url}}/assets/images/default.jpg{% endif %}" alt="">
         <div class="card-body bg-primary text-light">
           <h4 class="card-title"><a class="post-link text-light" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
           <p class="card-text">{{ post.small-discription }}</p>
