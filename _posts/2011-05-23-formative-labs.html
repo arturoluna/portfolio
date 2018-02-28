@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "Double Impact - Ecopetts"
+company: "Formative Labs"
+platform: "Web - iOS"
+date:   2011-05-23 17:30:29 -0800
+tags:
+  - tag-platform: web
+    badge-color: badge-dark
+  - tag-platform: iOS Design
+    badge-color: badge-info
+
+preview-img: /assets/images/formative-labs/formative-banner.jpg
+small-discription: Description coming soon.
+excerpt_separator: <!--more-->
+images:
+  - image_path: /assets/images/formative-labs/eco-1.jpg
+    caption: Start Screen
+  - image_path: /assets/images/formative-labs/eco-2.jpg
+    caption: Pet Screen
+  - image_path: /assets/images/formative-labs/eco-3.jpg
+    caption: Challenges Screen
+
+images-desktop:
+  - image_path: /assets/images/formative-labs/di-web-1.jpg
+    caption: Sing Up / Sing In
+  - image_path: /assets/images/formative-labs/di-web-2.jpg
+    caption: User Dashboard
+  - image_path: /assets/images/formative-labs/eco-web-1.jpg
+    caption: Ecopetts Landing Page
+
+tools :
+  - tool-name: HTML5
+    icon: ion-social-html5
+  - tool-name: CSS3
+    icon: ion-social-css3
+  - tool-name: JS
+    icon: ion-social-javascript
+
+carousel-type: mobile
+---
+
+<p>Full body description coming soon.</p>
+
+<div id="website-carousel">
+  <ul class="nav">
+    <li class="nav-item p-1">
+      <i class="ion-android-cancel"></i>
+    </li>
+    <li class="nav-item p-1">
+      <i class="ion-android-remove-circle"></i>
+    </li>
+    <li class="nav-item p-1">
+      <i class="ion-android-open"></i>
+    </li>
+  </ul>
+
+  <hr>
+<div id="gtemp" class="carousel desktop" data-ride="carousel">
+  <ol class="carousel-indicators">
+  {% for image in page.images-desktop %}
+    <li data-target="#gtemp" data-slide-to="{{forloop.index0}}"
+      {% if forloop.first %}class="active"{% endif %}></li>
+  {% endfor %}
+  </ol>
+  <div class="carousel-inner rounded" role="listbox">
+  {% for image in page.images-desktop %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img class="d-block w-100" alt="{{ image.caption }}"
+        src="{{ site.baseurl | prepend:site.url}}/{{image.image_path}}">
+      {% if image.caption %}
+        <div class="carousel-caption text-info">{{ image.caption }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+
+
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#gtemp" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#gtemp" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>

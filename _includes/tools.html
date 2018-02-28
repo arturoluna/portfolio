@@ -1,7 +1,7 @@
-  <ul class="nav">
-    <h6>Build Tools:</h6>
+  <ul class="nav p-1" >
+    <span>Build Tools Used:</span>
   {% for tool in page.tools %}
-        <li class="nav-item pl-4">
+        <li class="nav-item pl-2">
             <i data-toggle="tooltip" data-placement="bottom" title="{{ tool.tool-name }}" class="tools-svg-icon  {{ tool.icon }}"></i>
         </li>
   {% endfor %}
