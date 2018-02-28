@@ -1,0 +1,7 @@
+<ul class="nav">
+{% for tag in post.tags %}
+<li class="nav-item mb-2 mr-2">
+    <span class="badge badge-pill {{ tag.badge-color }}">{{ tag.tag-platform }}</span>
+</li>
+{% endfor %}
+</ul>

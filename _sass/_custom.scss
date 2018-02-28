@@ -17,7 +17,7 @@
 
 // Font Families
 $font-family-a: 'Futura', Raleway, sans-serif;
-$font-family-b: 'Sanchez', serif;
+$font-family-b: 'Helvetica', Arial, serif;
 // Typography
 
 // Font, line-height, and color for body text, headings, and more.
@@ -34,10 +34,6 @@ html{
 
 body {
    background: linear-gradient(0deg, #3b3d40, #1e3346);
-  p {
-    font-family: $font-family-monospace;
-  }
-
 }
 
 $card-border-color:  linear-gradient(30deg, #f9f9f9, #1e3346);
@@ -61,7 +57,7 @@ $sizes: map-merge((
 $brand-primary:             #f9f9f9;
 $primary:       #1e3346;
 $secondary:     #3b3d40;
-//$success:       $green !default;
+$success:       #7fa11a;
 $warning:       #be2400;
 // Options
 $enable-flex:               true;

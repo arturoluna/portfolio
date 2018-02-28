@@ -8,8 +8,9 @@
         <div class="card-body bg-primary text-light">
           <h4 class="card-title"><a class="post-link text-light" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
           <p class="card-text">{{ post.small-discription }}</p>
-          <p class="card-text"><small class="text-muted">Mobile</small></p>
-          <a href="{{ post.url | relative_url }}" class="btn btn-secondary">Learn More</a>
+              {% include tags.html %}
+          <!-- <p class="card-text"><small class="text-muted">{{ post.platform }}</small></p> -->
+          <a href="{{ post.url | relative_url }}" class="btn btn-outline-light">Learn More</a>
         </div>
       </div>
     </div>
