@@ -7,12 +7,12 @@
           <img class="card-img-top" src="{% if post.preview-img %}{{ post.preview-img | prepend: site.baseurl }}{% else %}{{ site.baseurl}}/assets/images/default.jpg{% endif %}" alt="">
         <div class="card-body bg-primary text-light">
           <h4 class="card-title"><a class="post-link text-light" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
-          {% if post.company %}
+          <!-- {% if post.company %}
           <p class="text-light mb-2 pb-2">{{post.company}}</p>
-          {% endif %}
-          <p class="card-text mb-2">{{ post.content | strip_html | truncatewords: 8 }}</p>
+          {% endif %} -->
+          <!-- <p class="card-text mb-2">{{ post.content | strip_html | truncatewords: 8 }}</p> -->
           <!-- <p class="card-text">{{ post.small-discription }}</p> -->
-              {% include tags.html %}
+              <!-- {% include tags.html %} -->
           <!-- <p class="card-text"><small class="text-muted">{{ post.platform }}</small></p> -->
           <a href="{{ post.url | relative_url }}" class="btn btn-outline-light">Learn More</a>
         </div>
