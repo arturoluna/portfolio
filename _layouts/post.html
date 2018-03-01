@@ -15,6 +15,10 @@ menuClass: navbar-dark
         <div class="post-content e-content mt-2 pr-2" itemprop="articleBody">
           {{ content }}
         </div>
+          {% if page.carousel-type == "desktop" %}
+            {% include carousel-desktop.html %}
+         {% endif %}
+
         <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
         <!-- Cards -->
               {% include tools.html %}
@@ -25,10 +29,8 @@ menuClass: navbar-dark
       <div class="container">
           <div class="row">
             {% if page.carousel-type == "mobile" %}
-                  {% include carousel-mobile.html %}
-                {% elsif page.carousel-type == "desktop" %}
-                  {% include carousel-desktop.html %}
-                {% endif %}
+                {% include carousel-mobile.html %}
+          {% endif %}
         </div>
       </div>
     </div>
