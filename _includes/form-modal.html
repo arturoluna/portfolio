@@ -9,37 +9,104 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="https://liveformhq.com/form/320a46b5-dba6-496b-b6b9-ff73ae4d56c2" method="POST" accept-charset="utf-8">
+        <form class="needs-validation" action="https://liveformhq.com/form/320a46b5-dba6-496b-b6b9-ff73ae4d56c2" method="POST" accept-charset="utf-8" novalidate>
             <input type="hidden" name="_utf8" value="✓">
 
             <!--
               NOTE: This is an optional field, if your form has a field named '_redirect',
               The user will be redirected to this page after the submission is saved
             -->
-            <input type="hidden" value="http://127.0.0.1:4000//thankyou" name="_redirect" />
+            <input type="hidden" value="{{site.baseurl}}/thankyou.html" name="_redirect" />
 
             <div class="form-group">
               <label for="name" class="col-form-label">Name:</label>
-              <input type="text" class="form-control" id="name" name="name">
+              <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+              <div class="valid-feedback">
+                 Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Name is needed.
+              </div>
             </div>
 
             <div class="form-group">
               <label for="email" class="col-form-label">E-Mail:</label>
-              <input type="text" class="form-control" id="email" name="email">
+              <input type="text" class="form-control" type="email" id="email" name="email" placeholder="example@example.com" required>
+              <div class="valid-feedback">
+                 Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Email needed.
+              </div>
             </div>
 
             <div class="form-group">
               <label for="message" class="col-form-label">Message:</label>
-              <textarea name="message" class="form-control" id="message"></textarea>
+              <textarea name="message" class="form-control" id="message" required></textarea required>
+                <div class="valid-feedback">
+                   Ok ok!
+                </div>
+                <div class="invalid-feedback">
+                  Message please.
+                </div>
             </div>
 
-            <!-- <button type="submit">Submit</button> -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Send message</button>
+              <button type="submit"  class="btn btn-primary">Send message</button>
             </div>
           </form>
+
+
+
+
+
+
       </div>
     </div>
   </div>
 </div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+<!-- <input type="hidden" value="http://127.0.0.1:4000//thankyou" name="_redirect" />
+
+<div class="form-group">
+  <label for="name" class="col-form-label">Name:</label>
+  <input type="text" class="form-control" id="name" name="name">
+</div>
+
+<div class="form-group">
+  <label for="email" class="col-form-label">E-Mail:</label>
+  <input type="text" readonly class="form-control" id="email" name="email" placeholder="Email" >
+</div>
+
+<div class="form-group">
+  <label for="message" class="col-form-label">Message:</label>
+  <textarea name="message" class="form-control" id="message"></textarea>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="submit" disabled class="btn btn-primary">Send message</button>
+</div>
+</form> -->
